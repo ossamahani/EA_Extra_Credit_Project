@@ -13,5 +13,18 @@ public class Admin{
 	@OneToOne
 	@JoinColumn(name="info_id")
 	private PersonalInfo info;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public PersonalInfo getInfo() {
+		return info;
+	}
+	public void setInfo(PersonalInfo info) {
+		this.info = info;
+	}
 
 }

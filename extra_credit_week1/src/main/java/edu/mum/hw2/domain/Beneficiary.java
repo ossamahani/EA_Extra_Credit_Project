@@ -17,5 +17,24 @@ public class Beneficiary {
 	@ManyToOne
 	@JoinColumn(name="project_id")
 	private Project project;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public PersonalInfo getInfo() {
+		return info;
+	}
+	public void setInfo(PersonalInfo info) {
+		this.info = info;
+	}
+	public Project getProject() {
+		return project;
+	}
+	public void setProject(Project project) {
+		this.project = project;
+	}
 
 }

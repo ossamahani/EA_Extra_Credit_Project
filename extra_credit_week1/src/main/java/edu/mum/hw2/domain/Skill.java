@@ -6,36 +6,32 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
 
 @Entity
-public class Volunteer {
+public class Skill {
 	@Id @GeneratedValue
 	private int id;
-	@OneToOne
-	@JoinColumn(name="info_id")
-	private PersonalInfo info;
-	@ManyToMany(mappedBy="volunteers")
-	private List<Task> Tasks = new ArrayList<Task>();
+	private String name;
+	@ManyToMany(mappedBy = "skills")
+	private List<Task> tasks = new ArrayList<Task>();
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public PersonalInfo getInfo() {
-		return info;
+	public String getName() {
+		return name;
 	}
-	public void setInfo(PersonalInfo info) {
-		this.info = info;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public List<Task> getTasks() {
-		return Tasks;
+		return tasks;
 	}
 	public void setTasks(List<Task> tasks) {
-		Tasks = tasks;
+		this.tasks = tasks;
 	}
 
 }
