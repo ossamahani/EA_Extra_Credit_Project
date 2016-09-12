@@ -4,8 +4,13 @@
 	version="2.0">
 	<persistence-unit name="cs544">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>edu.mum.hw2.domain.Movie</class>
-		<class>edu.mum.hw2.domain.Actor</class>
+		<class>edu.mum.hw2.domain.Admin</class>
+		<class>edu.mum.hw2.domain.Beneficiary</class>
+		<class>edu.mum.hw2.domain.PersonalInfo</class>
+		<class>edu.mum.hw2.domain.Project</class>
+		<class>edu.mum.hw2.domain.Skill</class>
+		<class>edu.mum.hw2.domain.Task</class>
+		<class>edu.mum.hw2.domain.Volunteer</class>
 		<properties>
 			<property name="hibernate.connection.driver_class" value="org.gjt.mm.mysql.Driver" />
 			<property name="hibernate.connection.url" value="jdbc:mysql://localhost/cs544?createDatabaseIfNotExist=true" />

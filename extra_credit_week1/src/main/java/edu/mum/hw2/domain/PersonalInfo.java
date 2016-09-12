@@ -2,9 +2,11 @@ package edu.mum.hw2.domain;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -19,6 +21,23 @@ public class PersonalInfo{
 	private String address;
 	@Temporal(TemporalType.DATE)
 	private Date dob;
+	@OneToOne(mappedBy="info", cascade = {CascadeType.PERSIST, CascadeType.MERGE} )
+	private Beneficiary beneficiary;
+	@OneToOne(mappedBy="info", cascade = {CascadeType.PERSIST, CascadeType.MERGE} )
+	private Volunteer volunteer;
+	
+	
+	private PersonalInfo()
+	{
+		
+	}
+	
+	public PersonalInfo(String name, String email)
+	{
+		this.name = name;
+		this.email = email;
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -54,6 +73,22 @@ public class PersonalInfo{
 	}
 	public void setDob(Date dob) {
 		this.dob = dob;
+	}
+
+	public Beneficiary getBeneficiary() {
+		return beneficiary;
+	}
+
+	public void setBeneficiary(Beneficiary beneficiary) {
+		this.beneficiary = beneficiary;
+	}
+
+	public Volunteer getVolunteer() {
+		return volunteer;
+	}
+
+	public void setVolunteer(Volunteer volunteer) {
+		this.volunteer = volunteer;
 	}
 
 }

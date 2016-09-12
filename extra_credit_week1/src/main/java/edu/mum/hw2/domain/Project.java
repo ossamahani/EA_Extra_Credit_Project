@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -20,8 +21,8 @@ import javax.persistence.TemporalType;
 	@NamedQuery(name="getProjectsInformation", query="SELECT DISTINCT P FROM Project P"),
 	@NamedQuery(name="getProjectsByStatus", query="SELECT DISTINCT P FROM Project P WHERE P.status = :status"),
 	@NamedQuery(name="getProjectsBySkill", query="SELECT DISTINCT P FROM Project P JOIN P.tasks T JOIN T.skills SK WHERE SK.name = :skill"),
-	@NamedQuery(name="getProjectsByKeyword", query="SELECT DISTINCT P FROM Project P JOIN P.beneficiaries B V WHERE P.description LIKE %:keyword% or B.address LIKE %:keyword%"),
-	@NamedQuery(name="getProjectsAndSKillsByVolunteer", query="SELECT DISTINCT P FROM Project P JOIN P.tasks T JOIN T.volunteers V ORDER BY T.startDate")	
+	@NamedQuery(name="getProjectsByKeyword", query="SELECT DISTINCT P FROM Project P JOIN P.beneficiaries B WHERE P.description LIKE :keyword or B.info.address LIKE :keyword"),
+	@NamedQuery(name="getProjectsInfoHaveVolunteer", query="SELECT DISTINCT P FROM Project P JOIN P.tasks T JOIN T.volunteers V ORDER BY T.startDate")	
 })
 public class Project {
 	
@@ -34,9 +35,9 @@ public class Project {
 	private Date endDate;
 	@Enumerated(EnumType.STRING)
 	private Status status;
-	@OneToMany(mappedBy = "project")
+	@OneToMany(mappedBy = "project", cascade = {CascadeType.PERSIST, CascadeType.MERGE} )
 	private List<Task> tasks = new ArrayList<Task>();
-	@OneToMany(mappedBy = "project")
+	@OneToMany(mappedBy = "project", cascade = {CascadeType.PERSIST, CascadeType.MERGE} )
 	private List<Beneficiary> beneficiaries = new ArrayList<Beneficiary>();
 	
 	public int getId() {

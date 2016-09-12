@@ -3,6 +3,7 @@ package edu.mum.hw2.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,7 +14,7 @@ public class Skill {
 	@Id @GeneratedValue
 	private int id;
 	private String name;
-	@ManyToMany(mappedBy = "skills")
+	@ManyToMany(mappedBy = "skills", cascade = {CascadeType.PERSIST, CascadeType.MERGE} )
 	private List<Task> tasks = new ArrayList<Task>();
 	public int getId() {
 		return id;

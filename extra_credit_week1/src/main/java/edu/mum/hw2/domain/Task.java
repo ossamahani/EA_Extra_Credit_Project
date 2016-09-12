@@ -18,12 +18,11 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@NamedQuery(name="getTasksPerProject", query="SELECT DISTINCT T FROM TASK T WHERE T.project.id = :projectId")
+@NamedQuery(name="getTasksByProject", query="SELECT DISTINCT T FROM Task T WHERE T.project.id = :projectId")
 
 public class Task {
 	@Id @GeneratedValue
 	private int id;
-	private String name;
 	private String description;
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date startDate;
@@ -34,7 +33,7 @@ public class Task {
 	@ManyToOne
 	@JoinColumn(name="project_id")
 	private Project project;
-	@ManyToOne
+	@ManyToMany
 	@JoinTable(name="task_volunteer", joinColumns = @JoinColumn(name="task_id"), inverseJoinColumns=@JoinColumn(name="volunteer_id"))
 	private List<Volunteer> volunteers = new ArrayList<Volunteer>();
 	@ManyToMany
@@ -45,12 +44,6 @@ public class Task {
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
 	}
 	public String getDescription() {
 		return description;
