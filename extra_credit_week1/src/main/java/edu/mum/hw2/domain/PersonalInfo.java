@@ -25,6 +25,8 @@ public class PersonalInfo{
 	private Beneficiary beneficiary;
 	@OneToOne(mappedBy="info", cascade = {CascadeType.PERSIST, CascadeType.MERGE} )
 	private Volunteer volunteer;
+	@OneToOne(mappedBy="info", cascade = {CascadeType.PERSIST, CascadeType.MERGE} )
+	private Admin admin;
 	
 	
 	private PersonalInfo()
@@ -89,6 +91,14 @@ public class PersonalInfo{
 
 	public void setVolunteer(Volunteer volunteer) {
 		this.volunteer = volunteer;
+	}
+
+	public Admin getAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(Admin admin) {
+		this.admin = admin;
 	}
 
 }
