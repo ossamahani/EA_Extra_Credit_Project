@@ -2,10 +2,12 @@ edu\mum\hw2\domain\Beneficiary.class
 edu\mum\hw2\control\Application.class
 edu\mum\hw2\domain\Volunteer.class
 edu\mum\hw2\domain\Task.class
+edu\mum\hw2\dao\VolunteerDAO.class
 edu\mum\hw2\domain\Status.class
 edu\mum\hw2\dao\TaskDAO.class
 edu\mum\hw2\domain\Skill.class
 edu\mum\hw2\dao\ProjectDAO.class
+edu\mum\hw2\dao\BeneficiaryDAO.class
 edu\mum\hw2\domain\Admin.class
 edu\mum\hw2\domain\PersonalInfo.class
 edu\mum\hw2\domain\Project.class
