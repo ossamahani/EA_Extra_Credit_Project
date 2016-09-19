@@ -35,5 +35,21 @@ public class ProjectServiceImpl implements ProjectService {
 	public List<Project> findByTasksVolunteersOrderByTasksStartDate() {
 		return projectDAO.findByTasksVolunteersOrderByTasksStartDate();
 	}
+
+	public Project addNew(Project project) {
+		return projectDAO.save(project);
+	}
+
+	public void remove(Integer id) {
+		 projectDAO.delete(id);
+	}
+
+	public Project get(Integer id) {
+		return projectDAO.findOne(id);
+	}
+
+	public Project update(Project project) {
+		return projectDAO.save(project);
+	}
 	
 }

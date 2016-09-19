@@ -23,10 +23,6 @@
 	<context:component-scan base-package="mum" />
 	<jpa:repositories base-package="mum" />
 
-	<bean id="projectDao" class="mum.ea.credit.week2.dao.ProjectDao">
-		
-	</bean>
-
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
@@ -59,7 +55,6 @@
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
 				<prop key="connection.pool.size">1</prop>
 				<prop key="hibernate.show_sql">true</prop>
-				<prop key="hibernate.current_session_context_class">thread</prop>
 			</props>
 		</property>
 	</bean>

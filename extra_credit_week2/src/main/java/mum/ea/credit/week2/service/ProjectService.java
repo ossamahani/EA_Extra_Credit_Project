@@ -12,5 +12,9 @@ public interface ProjectService {
 	List<Project> findByTasksSkillsName(String taskName);
 	List<Project> findByDescriptionLikeAndLocation(String keyword, String location);
 	List<Project> findByTasksVolunteersOrderByTasksStartDate();
+	Project addNew(Project project);
+	void remove(Integer id);
+	Project get(Integer id);
+	Project update(Project project);
 
 }

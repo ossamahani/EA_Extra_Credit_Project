@@ -1,4 +1,4 @@
-package cs544.sample;
+package mum.ea.credit.week2.controller;
 
 public class NoSuchResourceException extends RuntimeException {
 	private static final long serialVersionUID = 1L;

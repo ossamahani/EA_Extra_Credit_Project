@@ -5,22 +5,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Cars currently in the shop</title>
+<title>The Projects</title>
 </head>
 <body>
-	<h1>Cars currently in the shop</h1>
+	<h1>Projects Portfolio</h1>
 	<table>
-	<c:forEach var="car" items="${cars}">
+	<c:forEach var="project" items="${projects}">
 	<tr>
-		<td>${car.make}</td>
-		<td>${car.model}</td>
-		<td>${car.year}</td>
-		<td>${car.color}</td>
-		<td><a href="cars/${car.id}">edit</a></td>
+		<td>${project.description}</td>
+		<td>${project.location}</td>
+		<td>${project.startDate}</td>
+		<td>${project.endDate}</td>
+		<td><a href="projects/${project.id}">edit</a></td>
 	</tr>
 	</c:forEach>
 	</table>
 	
-	<a href="addCar.html"> Add a Car</a>
+	<a href="addProject.html"> Add New Project</a>
 </body>
 </html>
