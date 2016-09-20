@@ -61,4 +61,12 @@ public class ProjectController {
 		mv.setViewName("noSuchResource");
 		return mv;
 	}
+
+	public ProjectService getProjectService() {
+		return projectService;
+	}
+
+	public void setProjectService(ProjectService projectService) {
+		this.projectService = projectService;
+	}
 }

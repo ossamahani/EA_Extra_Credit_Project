@@ -33,7 +33,7 @@ public class ProjectServiceImpl implements ProjectService {
 	}
 
 	public List<Project> findByTasksVolunteersOrderByTasksStartDate() {
-		return projectDAO.findByTasksVolunteersOrderByTasksStartDate();
+		return projectDAO.findByTasksVolunteersOrderByStartDateDesc();
 	}
 
 	public Project addNew(Project project) {

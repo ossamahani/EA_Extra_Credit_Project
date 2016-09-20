@@ -13,12 +13,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedQuery;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@NamedQuery(name="getTasksByProject", query="SELECT DISTINCT T FROM Task T WHERE T.project.id = :projectId")
 
 public class Task {
 	@Id @GeneratedValue
