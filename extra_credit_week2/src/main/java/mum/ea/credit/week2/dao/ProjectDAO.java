@@ -16,6 +16,6 @@ public interface ProjectDAO extends JpaRepository<Project, Serializable> , CrudR
 	List<Project> findByStatus(Status status);
 	List<Project> findByTasksSkillsName(String taskName);
 	List<Project> findByDescriptionContainingAndLocationContaining(String keyword, String location);
-	List<Project> findByTasksVolunteersOrderByStartDateDesc();
+	//List<Project> findByTasksVolunteersOrderByStartDateDesc();
 	
 }

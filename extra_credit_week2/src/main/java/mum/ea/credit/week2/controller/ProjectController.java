@@ -47,7 +47,7 @@ public class ProjectController {
 		return "redirect:/projects";
 	}
 	
-	@RequestMapping(value="/cars/delete", method=RequestMethod.POST)
+	@RequestMapping(value="/projects/delete", method=RequestMethod.POST)
 	public String delete(int projectId) {
 		projectService.remove(projectId);
 		return "redirect:/projects";

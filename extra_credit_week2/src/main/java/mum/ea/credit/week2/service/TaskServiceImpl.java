@@ -14,7 +14,27 @@ public class TaskServiceImpl implements TaskService{
 	private TaskDAO taskDAO;
 	
 	public List<Task> findByProjct(Project project) {
-		return taskDAO.findByProjct(project);
+		return taskDAO.findByProject(project);
+	}
+
+	public Task addNew(Task task) {
+		return taskDAO.save(task);
+	}
+
+	public void remove(Integer id) {
+		taskDAO.delete(id);
+	}
+
+	public Task get(Integer id) {
+		return taskDAO.findOne(id);
+	}
+
+	public Task update(Task task) {
+		return taskDAO.save(task);
+	}
+
+	public List<Task> findAll() {
+		return taskDAO.findAll();
 	}
 
 }

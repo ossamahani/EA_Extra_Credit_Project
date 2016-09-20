@@ -12,7 +12,7 @@ import mum.ea.credit.week2.domain.Task;
 @Repository
 public interface TaskDAO extends JpaRepository<Task, Serializable> , CrudRepository<Task, Serializable>
 {
-	
-	List<Task> findByProjct(Project project);
+	List<Task> findAll();
+	List<Task> findByProject(Project project);
 	
 }
