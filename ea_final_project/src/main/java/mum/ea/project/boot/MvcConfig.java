@@ -17,6 +17,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -34,6 +35,7 @@ import org.springframework.web.servlet.view.JstlView;
 @PropertySource("classpath:application.properties")
 @EnableTransactionManagement
 @EnableAspectJAutoProxy
+@EnableWebSecurity
 public class MvcConfig extends WebMvcConfigurerAdapter {
 	private static final String PROPERTY_NAME_DATABASE_DRIVER = "db.driver";
     private static final String PROPERTY_NAME_DATABASE_PASSWORD = "db.password";
