@@ -20,7 +20,7 @@ public class ProjectController {
 	
 	@RequestMapping("/")
 	public String redirectRoot() {
-		return "redirect:/projects";
+		return "index";
 	}
 	
 	@RequestMapping(value="/projects", method=RequestMethod.GET)

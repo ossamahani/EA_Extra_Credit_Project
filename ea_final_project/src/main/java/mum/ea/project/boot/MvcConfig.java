@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -25,15 +26,18 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
+import mum.ea.project.security.SecurityConfig;
+
  
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = {"mum.ea.project.controller", "mum.ea.project.domain",
-			"mum.ea.project.dao", "mum.ea.project.service" })
+			"mum.ea.project.dao", "mum.ea.project.service", "mum.ea.project.security"})
 @EnableJpaRepositories("mum.ea.project.dao")
 @PropertySource("classpath:application.properties")
 @EnableTransactionManagement
 @EnableAspectJAutoProxy
+@Import({ SecurityConfig.class })
 public class MvcConfig extends WebMvcConfigurerAdapter {
 	private static final String PROPERTY_NAME_DATABASE_DRIVER = "db.driver";
     private static final String PROPERTY_NAME_DATABASE_PASSWORD = "db.password";

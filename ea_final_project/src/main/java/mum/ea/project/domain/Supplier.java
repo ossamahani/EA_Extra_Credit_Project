@@ -4,7 +4,7 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
-@DiscriminatorValue(value="ROLE_PROVIDER")
-public class Provider extends User{
+@DiscriminatorValue(value="ROLE_SUPPLIER")
+public class Supplier extends User{
 
 }
