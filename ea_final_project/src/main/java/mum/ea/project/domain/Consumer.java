@@ -5,6 +5,6 @@ import javax.persistence.Entity;
 
 @Entity
 @DiscriminatorValue(value="ROLE_CONSUMER")
-public class Consumer extends Admin{
+public class Consumer extends User{
 
 }
